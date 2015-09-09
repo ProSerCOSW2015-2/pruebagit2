@@ -78,10 +78,25 @@ public class servicesFacadeTest {
             //bloque catch en el cual la prueba debería entrar
             //para no generar un fallo.
         }
-        
-        
-        
+
     }
+    
+    @Test
+        public void testConsultarProducto() throws ServicesException {
+   
+            Producto p1=new Producto(2222,"p1",100);
+            Producto p2=new Producto(3333,"p2",200);
+            Producto p3=new Producto(4444,"p3",300);
+        
+            sf.registrarProducto(p1);
+            sf.registrarProducto(p2); 
+            sf.registrarProducto(p3);
+            
+            assertEquals("el producto es incorrecto",2222,sf.consultarProducto(p1.getId()));
+            assertEquals("el producto es incorrecto",3333,sf.consultarProducto(p2.getId()));
+            assertEquals("el producto es incorrecto",4444,sf.consultarProducto(p3.getId()));
+            
+        }
 
     
 }
