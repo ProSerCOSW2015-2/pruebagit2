@@ -19,12 +19,15 @@ package edu.eci.pdsw.sampleprj.middleware;
 import edu.eci.pdsw.stubs.servicesfacadestub.PersistenceFacade;
 import edu.eci.pdsw.stubs.servicesfacadestub.Producto;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  *
  * @author hcadavid
  */
+
 public class ServicesFacade {
+    private static final Logger LOG = Logger.getLogger(ServicesFacade.class.getName());
     
     PersistenceFacade pf=PersistenceFacade.getInstance();
     
@@ -55,11 +58,16 @@ public class ServicesFacade {
                 throw new ServicesException("Se intenta calcular el costo"
                         + "de una lista de compras que tiene al menos"
                         + "un producto no registrado.");
+            }else{
+                total=+p.getPrecioEnPesos();
             }
         }
+         LOG.info("calculando costos..");
         
         return total;
+       
     }
+        
     
     
     /**
