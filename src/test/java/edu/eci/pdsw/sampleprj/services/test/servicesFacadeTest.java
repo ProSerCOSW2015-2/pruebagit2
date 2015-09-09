@@ -53,7 +53,7 @@ public class servicesFacadeTest {
         sf.registrarProducto(p2);
         sf.registrarProducto(p3);
         
-        assertEquals("El cálculo de una lista de productos existentes no es correcto.",600,sf.calcularCostoLista(Arrays.asList(new Producto[]{p1,p2,p3})));
+        assertEquals("El cálculo de una lista de productos existentes no es correcto.",600,sf.calcularCosto(Arrays.asList(new Producto[]{p1,p2,p3})));
         
     }
 
@@ -68,7 +68,7 @@ public class servicesFacadeTest {
             sf.registrarProducto(p1);
             sf.registrarProducto(p2);        
             
-            sf.calcularCostoLista(Arrays.asList(new Producto[]{p1,p2,p3}));
+            sf.calcularCosto(Arrays.asList(new Producto[]{p1,p2,p3}));
             
             fail("La fachada de servicios calculó el total de una lista de compras"
                     + "con productos que no han sido registrados");

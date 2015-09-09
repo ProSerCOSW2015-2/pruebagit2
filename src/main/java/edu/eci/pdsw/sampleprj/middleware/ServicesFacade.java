@@ -49,7 +49,7 @@ public class ServicesFacade {
      * @throws ServicesException si uno de los elementos de la lista no está
      * registrado en la base de datos.
      */
-    public int calcularCostoLista(List<Producto> lp) throws ServicesException{
+    public int calcularCosto(List<Producto> lp) throws ServicesException{
         
         int total=0;
         
